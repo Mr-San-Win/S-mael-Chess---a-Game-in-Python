@@ -1,146 +1,161 @@
-Sam@el’s Chess
+---
 
-A Complete Python & Tkinter Chess Application
+# **Sam@el’s Chess**
 
+### *A Single-File Python Chess Engine with Tkinter GUI*
 
+![Python](https://img.shields.io/badge/Python-3.11%2B-blue)
+![Tkinter](https://img.shields.io/badge/GUI-Tkinter-green)
+![Status](https://img.shields.io/badge/Project-Active-brightgreen)
+![License](https://img.shields.io/badge/License-Academic_Use-lightgrey)
 
+---
 
+## **Project Summary**
 
+**Sam@el’s Chess** is a complete chess application built in **Python** using **Tkinter**, implemented entirely in a **single .py file** while maintaining clean internal modularity.
+It provides a full chess engine, multiple game modes, rule enforcement, and a multi-page user interface suitable for academic submission and portfolio demonstration.
 
+This project implements professional **Object-Oriented Programming**, encapsulated rule logic, and two distinct AI levels.
 
+---
 
-Overview
+## **Feature Overview**
 
-Sam@el’s Chess is a full-featured chess engine and graphical user interface built in Python using Tkinter, designed to run entirely in a single file.
-It implements complete chess rules, multiple game modes, AI opponents, and a structured UI—making it ideal for academic submission, practical gameplay, and portfolio showcase.
+### **Gameplay**
 
-This project demonstrates clear Object-Oriented Programming (OOP) design, strong separation of logic and UI, and clean architectural organization inside a unified codebase.
+| Feature           | Description                           |
+| ----------------- | ------------------------------------- |
+| PvP Mode          | Local player vs player                |
+| Human vs AI       | Beginner-friendly & strong AI options |
+| Move Highlighting | Shows legal moves for selected piece  |
+| Move History      | Real-time log of moves                |
+| Captured Pieces   | Visual display of taken pieces        |
+| Time Controls     | Unlimited, 5, 10, 30 minutes          |
 
-Features
-✔ Gameplay
+### **Rule Engine**
 
-Player vs Player (Local)
+| Rule                    | Status             |
+| ----------------------- | ------------------ |
+| Castling                | Fully implemented  |
+| En Passant              | Supported          |
+| Pawn Promotion          | Automatic prompt   |
+| Check Detection         | Fully validated    |
+| Stalemate / Checkmate   | Handled            |
+| Illegal Move Prevention | Strict enforcement |
 
-Player vs AI (Two difficulty levels)
+### **User Interface**
 
-Legal move highlighting
+* Multi-page Tkinter navigation
+* Dark-mode themed layout
+* Responsive square rendering
+* Scrollable educational content
+* Precise board interaction design
 
-Move history tracking window
+---
 
-Captured pieces display
+## **Architecture**
 
-Optional time controls (Unlimited / 5 / 10 / 30 minutes)
+### **Class Hierarchy**
 
-✔ Fully Implemented Chess Rules
-
-All legal movement patterns
-
-Castling (Queen-side & King-side)
-
-En Passant
-
-Pawn Promotion
-
-Check, checkmate, and stalemate detection
-
-King-safety validation
-
-Illegal move prevention
-
-✔ User Interface (Tkinter)
-
-Multi-page navigation (Menu → Mode → Game)
-
-Dark-mode inspired theme
-
-Dynamic board rendering
-
-Click-based piece selection
-
-Scrollable Learn Chess educational module
-
-Smooth window transitions
-
-Architecture & Design
-Object-Oriented Structure
-Piece (Base Class)
+```
+ChessGame        # Core game engine
+Piece            # Base class
  ├── Pawn
  ├── Knight
  ├── Bishop
  ├── Rook
  ├── Queen
  └── King
+```
 
-Key Principles
+### **Design Principles Used**
 
-Inheritance: All pieces extend Piece
+* **Inheritance** for piece specialization
+* **Polymorphism** through `can_move()` overrides
+* **Composition**: `ChessGame` owns board + rules
+* **Encapsulation** of internal game state
+* **Dictionary usage** for castling rights, promotions, UI routing
+* **Exception handling** for invalid states
 
-Polymorphism: Each piece implements its own can_move(...)
+### **Internal Structure (Single-File Project)**
 
-Encapsulation: Internal board state controlled by ChessGame
+The `.py` file is organized into logical sections:
 
-Composition: ChessGame owns board, move rules, captured lists, rights
+```
+1. Constants & Utilities
+2. Piece Classes
+3. ChessGame Engine
+4. Move Validator
+5. AI Algorithms
+6. Tkinter UI Pages
+7. Application Entry Point
+```
 
-Dictionary Usage: Symbol mapping, castling rights, promotions, routing
+---
 
-Exception Handling: Prevents crashes from invalid actions
+## **AI System**
 
-AI System
-Club-Level AI
+### **Club-Level AI**
 
-Random but legal move selection
+* Chooses randomly from all legal moves
+* Low-complexity, beginner friendly
 
-Suitable for beginners
+### **Strong AI**
 
-Strong AI
+* Material-based evaluation
+* Move scoring heuristics
+* Prioritizes advantageous positions
 
-Material-based evaluation
+---
 
-Weighted scoring (Queen > Rook > Bishop > Knight > Pawn)
+## **Installation & Execution**
 
-Selects best move based on board advantage
+### **Requirements**
 
-Project Structure (Single-File Layout)
+* Python **3.11+**
+* Tkinter (included with Windows/macOS)
 
-Even in one file, the codebase is cleanly segmented into:
+### **Run the Application**
 
-• Chess Piece Classes
-• Core Chess Engine (ChessGame)
-• Move Validation System
-• AI Modules
-• Tkinter GUI Pages
-• Utility Functions & Constants
-
-
-This layout ensures clarity, readability, and extensibility.
-
-Installation
-Requirements
-
-Python 3.11+
-
-Tkinter (bundled with Windows/macOS Python)
-
-Run
+```bash
 python "Python Project.py"
+```
 
+---
 
-The main menu will load automatically.
+## **Build a Standalone Executable (Windows)**
 
-Build as Executable (Optional)
+```bash
 pip install pyinstaller
 pyinstaller --onefile "Python Project.py"
+```
 
+Executable will appear in:
 
-Executable appears in the dist/ directory.
+```
+/dist/
+```
 
-License
+---
 
-This project is intended for personal, academic, and learning use.
-Modification and extension are allowed.
+## **License**
 
-Author
+This project is intended for academic, personal, and educational use.
 
-San Win
-Software Engineering Student
-KMITL — Thailand
+---
+
+## **Author**
+
+**San Win**
+Software Engineering Student — KMITL, Thailand
+
+---
+
+If you want, I can also generate:
+
+* a **GitHub banner** (PNG or SVG)
+* a **class diagram image**
+* a **Badges Row** (Python, issues, build status)
+* a **short version** for marketplaces
+* a **release notes** or **CHANGELOG.md**
