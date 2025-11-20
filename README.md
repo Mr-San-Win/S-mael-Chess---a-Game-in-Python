@@ -152,10 +152,3 @@ Software Engineering Student — KMITL, Thailand
 
 ---
 
-If you want, I can also generate:
-
-* a **GitHub banner** (PNG or SVG)
-* a **class diagram image**
-* a **Badges Row** (Python, issues, build status)
-* a **short version** for marketplaces
-* a **release notes** or **CHANGELOG.md**
