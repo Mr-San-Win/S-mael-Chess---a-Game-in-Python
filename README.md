@@ -1,99 +1,69 @@
-Sam@el’s Chess — A Python & Tkinter Chess Application
+Sam@el’s Chess
 
-Sam@el’s Chess is a fully-functional chess application developed in Python using Tkinter and implemented entirely within a single code file.
-The project demonstrates clean Object-Oriented Programming (OOP) design, complete chess rule implementation, user-friendly graphical interfaces, and basic AI opponents.
+A Complete Python & Tkinter Chess Application
 
-The system is designed for both academic assessment and practical gameplay and includes an integrated Learn Chess module for beginners.
 
-1. Overview
 
-This application provides a structured and interactive chess experience featuring:
 
-Two game modes (PvP and Human vs AI)
 
-A multi-page Tkinter GUI
 
-Complete enforcement of chess rules
 
-A modular OOP logic layer decoupled from the UI
 
-Move history, captured pieces tracking, and time controls
+Overview
 
-Educational resources for new players
+Sam@el’s Chess is a full-featured chess engine and graphical user interface built in Python using Tkinter, designed to run entirely in a single file.
+It implements complete chess rules, multiple game modes, AI opponents, and a structured UI—making it ideal for academic submission, practical gameplay, and portfolio showcase.
 
-The project complies with formal software development requirements and demonstrates the application of OOP concepts within a single-file architecture.
+This project demonstrates clear Object-Oriented Programming (OOP) design, strong separation of logic and UI, and clean architectural organization inside a unified codebase.
 
-2. Key Features
-Gameplay
+Features
+✔ Gameplay
 
 Player vs Player (Local)
 
-Human vs AI
+Player vs AI (Two difficulty levels)
 
-Club-Level AI (random but legal)
+Legal move highlighting
 
-Strong AI (evaluation-based)
+Move history tracking window
 
-Highlighted legal moves
+Captured pieces display
 
-Move history window
+Optional time controls (Unlimited / 5 / 10 / 30 minutes)
 
-Captured piece display
+✔ Fully Implemented Chess Rules
 
-Time control options (No limit, 5/10/30 minutes)
+All legal movement patterns
 
-Chess Rules (All Implemented)
-
-Legal movement validation
-
-Castling (complete rules)
+Castling (Queen-side & King-side)
 
 En Passant
 
 Pawn Promotion
 
-Check, checkmate, stalemate
+Check, checkmate, and stalemate detection
+
+King-safety validation
 
 Illegal move prevention
 
-King-safety verification
+✔ User Interface (Tkinter)
 
-User Interface (Tkinter)
+Multi-page navigation (Menu → Mode → Game)
 
-Multi-frame navigation
+Dark-mode inspired theme
 
-Clean dark-mode theme
-
-Responsive board rendering
+Dynamic board rendering
 
 Click-based piece selection
 
-“Back to Menu” navigation
+Scrollable Learn Chess educational module
 
-Integrated instructional page (“Learn Chess”)
+Smooth window transitions
 
-Scrollable content sections
-
-3. Object-Oriented Architecture
-
-The project meets academic OOP requirements through a clean and expressive design.
-
-3.1 Composition
-
-The central class ChessGame owns:
-
-The 8×8 board of Piece objects
-
-Game state attributes
-
-Captured piece lists
-
-Move history
-
-Castling/en-passant rights
-
-3.2 Inheritance
-Piece
+Architecture & Design
+Object-Oriented Structure
+Piece (Base Class)
  ├── Pawn
  ├── Knight
  ├── Bishop
@@ -101,101 +71,76 @@ Piece
  ├── Queen
  └── King
 
-3.3 Polymorphism
+Key Principles
 
-Each subclass implements its own movement logic via:
+Inheritance: All pieces extend Piece
 
-def can_move(self, game, sr, sc, tr, tc):
-    ...
+Polymorphism: Each piece implements its own can_move(...)
 
-3.4 Encapsulation
+Encapsulation: Internal board state controlled by ChessGame
 
-All chess rules and state logic are self-contained within ChessGame.
+Composition: ChessGame owns board, move rules, captured lists, rights
 
-3.5 Exception Handling
+Dictionary Usage: Symbol mapping, castling rights, promotions, routing
 
-Used to prevent crashes during invalid operations.
+Exception Handling: Prevents crashes from invalid actions
 
-3.6 Dictionary Usage
-
-Dictionaries are used for:
-
-Piece symbols
-
-Castling rights
-
-Promotion options
-
-Player configurations
-
-Page navigation settings
-
-4. AI System
+AI System
 Club-Level AI
 
-Random selection among all legal moves
+Random but legal move selection
 
-Beginner-friendly
+Suitable for beginners
 
 Strong AI
 
 Material-based evaluation
 
-Move scoring and decision making
+Weighted scoring (Queen > Rook > Bishop > Knight > Pawn)
 
-5. Project Structure
+Selects best move based on board advantage
 
-This project follows a single-file architecture for academic requirements:
+Project Structure (Single-File Layout)
 
-Python Project.py     # Complete application
-README.md             # Documentation
+Even in one file, the codebase is cleanly segmented into:
+
+• Chess Piece Classes
+• Core Chess Engine (ChessGame)
+• Move Validation System
+• AI Modules
+• Tkinter GUI Pages
+• Utility Functions & Constants
 
 
-Logical sections include:
+This layout ensures clarity, readability, and extensibility.
 
-Piece classes
-
-Game engine
-
-Move validation system
-
-GUI pages
-
-AI modules
-
-Utility functions
-
-6. Running the Application
+Installation
 Requirements
 
 Python 3.11+
 
-Tkinter (comes with Python on Windows/macOS)
+Tkinter (bundled with Windows/macOS Python)
 
-Run Command
+Run
 python "Python Project.py"
 
-7. Building an Executable (Optional)
 
-Install PyInstaller:
+The main menu will load automatically.
 
+Build as Executable (Optional)
 pip install pyinstaller
-
-
-Build:
-
 pyinstaller --onefile "Python Project.py"
 
 
-Executable appears in dist/.
+Executable appears in the dist/ directory.
 
-8. License
+License
 
-This project is intended for academic and personal use.
-You may modify or extend it freely.
+This project is intended for personal, academic, and learning use.
+Modification and extension are allowed.
 
-9. Author
+Author
 
-Developed by San Win
+San Win
 Software Engineering Student
 KMITL — Thailand
